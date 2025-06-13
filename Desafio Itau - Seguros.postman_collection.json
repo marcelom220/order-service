@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "3dd8c5c7-14f5-4ff4-8aca-549e3389086e",
+		"name": "Desafio Itau - Seguros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2837240"
+	},
+	"item": [
+		{
+			"name": "Get mock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": \"e053467f-bd48-4fd2-9481-75bd4e88ee40\",\r\n        \"customerId\": \"7c2a27ba-71ef-4dd8-a3cf-5e094316ffd8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/risks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"risks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar ordem seguro rejeitado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n  \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n  \"category\": \"AUTO\",\r\n  \"salesChannel\": \"MOBILE\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"total_monthly_premium_amount\": 75.25,\r\n  \"insured_amount\": 275000.50,\r\n  \"coverages\": {\r\n    \"Roubo\": 100000.25,\r\n    \"Perda Total\": 100000.25,\r\n    \"Colisão com Terceiros\": 75000.00\r\n  },\r\n  \"assistances\": [\r\n    \"Guincho até 250km\",\r\n    \"Troca de Óleo\",\r\n    \"Chaveiro 24h\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secure-orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secure-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar ordem seguro Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n  \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n  \"category\": \"AUTO\",\r\n  \"salesChannel\": \"MOBILE\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"total_monthly_premium_amount\": 75.25,\r\n  \"insured_amount\": 275000.50,\r\n  \"coverages\": {\r\n    \"Roubo\": 100000.25,\r\n    \"Perda Total\": 100000.25,\r\n    \"Colisão com Terceiros\": 75000.00\r\n  },\r\n  \"assistances\": [\r\n    \"Guincho até 250km\",\r\n    \"Troca de Óleo\",\r\n    \"Chaveiro 24h\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secure-orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secure-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar ordem seguro Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n  \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n  \"category\": \"AUTO\",\r\n  \"salesChannel\": \"MOBILE\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"total_monthly_premium_amount\": 75.25,\r\n  \"insured_amount\": 275000.50,\r\n  \"coverages\": {\r\n    \"Roubo\": 100000.25,\r\n    \"Perda Total\": 100000.25,\r\n    \"Colisão com Terceiros\": 75000.00\r\n  },\r\n  \"assistances\": [\r\n    \"Guincho até 250km\",\r\n    \"Troca de Óleo\",\r\n    \"Chaveiro 24h\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secure-orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secure-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ordem id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n  \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n  \"category\": \"AUTO\",\r\n  \"salesChannel\": \"MOBILE\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"total_monthly_premium_amount\": 75.25,\r\n  \"insured_amount\": 275000.50,\r\n  \"coverages\": {\r\n    \"Roubo\": 100000.25,\r\n    \"Perda Total\": 100000.25,\r\n    \"Colisão com Terceiros\": 75000.00\r\n  },\r\n  \"assistances\": [\r\n    \"Guincho até 250km\",\r\n    \"Troca de Óleo\",\r\n    \"Chaveiro 24h\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secure-orders/0197649f-59c0-709a-a6c3-a6e0f429b57b",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secure-orders",
+						"0197649f-59c0-709a-a6c3-a6e0f429b57b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ordem by customer id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n  \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n  \"category\": \"AUTO\",\r\n  \"salesChannel\": \"MOBILE\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"total_monthly_premium_amount\": 75.25,\r\n  \"insured_amount\": 275000.50,\r\n  \"coverages\": {\r\n    \"Roubo\": 100000.25,\r\n    \"Perda Total\": 100000.25,\r\n    \"Colisão com Terceiros\": 75000.00\r\n  },\r\n  \"assistances\": [\r\n    \"Guincho até 250km\",\r\n    \"Troca de Óleo\",\r\n    \"Chaveiro 24h\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secure-orders?customerId=x",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secure-orders"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "x"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ordem by customer id Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n  \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n  \"category\": \"AUTO\",\r\n  \"salesChannel\": \"MOBILE\",\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"total_monthly_premium_amount\": 75.25,\r\n  \"insured_amount\": 275000.50,\r\n  \"coverages\": {\r\n    \"Roubo\": 100000.25,\r\n    \"Perda Total\": 100000.25,\r\n    \"Colisão com Terceiros\": 75000.00\r\n  },\r\n  \"assistances\": [\r\n    \"Guincho até 250km\",\r\n    \"Troca de Óleo\",\r\n    \"Chaveiro 24h\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secure-orders/019761fe-9d5c-7ced-a370-ae5ec2d3728c/cancel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secure-orders",
+						"019761fe-9d5c-7ced-a370-ae5ec2d3728c",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
