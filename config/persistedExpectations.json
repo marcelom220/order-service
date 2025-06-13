@@ -1,0 +1,130 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/risks",
+      "body": {
+        "orderId": "e053467f-bd48-4fd2-9481-75bd4e88ee40",
+        "customerId": "7c2a27ba-71ef-4dd8-a3cf-5e094316ffd8"
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json"]
+      },
+      "body": {
+        "orderId": "e053467f-bd48-4fd2-9481-75bd4e88ee40",
+        "customerId": "7c2a27ba-71ef-4dd8-a3cf-5e094316ffd8",
+        "analyzedAt": "2024-05-10T12:00:00Z",
+        "classification": "HIGH_RISK",
+        "occurrences": [
+          {
+            "id": "e053467f-bd48-4fd2-9481-75bd4e88ee40",
+            "productId": 78900069,
+            "type": "FRAUD",
+            "description": "Attempted Fraudulent transaction",
+            "createdAt": "2024-05-10T12:00:00Z",
+            "updatedAt": "2024-05-10T12:00:00Z"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/risks",
+      "body": {
+        "orderId": "f1267a8b-e217-4a55-8411-3cb52741a777",
+        "customerId": "6b2a12ba-91ff-4dd8-a3cf-2e094316aaa8"
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json"]
+      },
+      "body": {
+        "orderId": "f1267a8b-e217-4a55-8411-3cb52741a777",
+        "customerId": "6b2a12ba-91ff-4dd8-a3cf-2e094316aaa8",
+        "analyzedAt": "2024-04-22T14:45:00Z",
+        "classification": "MEDIUM_RISK",
+        "occurrences": [
+          {
+            "id": "f1267a8b-e217-4a55-8411-3cb52741a777",
+            "productId": 10445678,
+            "type": "SUSPICION",
+            "description": "Unusual activity flagged for review",
+            "createdAt": "2024-04-22T14:45:00Z",
+            "updatedAt": "2024-04-22T14:45:00Z"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/risks",
+      "body": {
+        "orderId": "g6789b6d-f412-4955-8422-8cb52741c555",
+        "customerId": "5a3b45ba-81cd-4dd8-b3cf-4e094316bbb1"
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json"]
+      },
+      "body": {
+        "orderId": "g6789b6d-f412-4955-8422-8cb52741c555",
+        "customerId": "5a3b45ba-81cd-4dd8-b3cf-4e094316bbb1",
+        "analyzedAt": "2024-03-15T10:30:00Z",
+        "classification": "LOW_RISK",
+        "occurrences": [
+          {
+            "id": "g6789b6d-f412-4955-8422-8cb52741c555",
+            "productId": 20567832,
+            "type": "MINOR_ALERT",
+            "description": "Small deviation detected, no immediate concern",
+            "createdAt": "2024-03-15T10:30:00Z",
+            "updatedAt": "2024-03-15T10:30:00Z"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/risks",
+      "body": {
+        "orderId": "x9876b6d-a431-4822-8422-9cb52741z333",
+        "customerId": "3c5a67ba-72ee-4dd8-c3cf-1e094316ccc9"
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json"]
+      },
+      "body": {
+        "orderId": "x9876b6d-a431-4822-8422-9cb52741z333",
+        "customerId": "3c5a67ba-72ee-4dd8-c3cf-1e094316ccc9",
+        "analyzedAt": "2024-06-01T09:15:00Z",
+        "classification": "UNKNOWN_RISK",
+        "occurrences": [
+          {
+            "id": "x9876b6d-a431-4822-8422-9cb52741z333",
+            "productId": 99999999,
+            "type": "UNKNOWN",
+            "description": "Risk classification could not be determined",
+            "createdAt": "2024-06-01T09:15:00Z",
+            "updatedAt": "2024-06-01T09:15:00Z"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,66 @@
+
+spring:
+  application:
+    name=order-service
+  data:
+    mongodb:
+      auto-index-creation: 'true'
+      authentication-database: secure_order_db
+      username: teste
+      database: secure_order_db
+      password: password
+      port: '27017'
+      host: localhost
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+    listener:
+      simple:
+        prefetch: 4
+        retry:
+          enabled: true
+          initial-interval: 10s
+          max-interval: 20s
+          multiplier: 2
+          max-attempts: 3
+
+api:
+  url:
+    fraud: http://localhost:1080
+mock:
+  fraud:
+    id: e053467f-bd48-4fd2-9481-75bd4e88ee40
+    customer: 7c2a27ba-71ef-4dd8-a3cf-5e094316ffd8
+    # Mock de solicitações para avaliação de risco
+    # Cada bloco representa uma solicitação e resposta do serviço de análise de fraudes.
+
+    # Classificação de risco: HIGH_RISK
+    # orderId: e053467f-bd48-4fd2-9481-75bd4e88ee40
+    # customerId: 7c2a27ba-71ef-4dd8-a3cf-5e094316ffd8
+
+    # Classificação de risco: REGULAR
+    # orderId: f1267a8b-e217-4a55-8411-3cb52741a777
+    # customerId: 6b2a12ba-91ff-4dd8-a3cf-2e094316aaa8
+
+    # Classificação de risco: PREFERRED
+    # orderId: g6789b6d-f412-4955-8422-8cb52741c555
+    # customerId: 5a3b45ba-81cd-4dd8-b3cf-4e094316bbb1
+
+    # Classificação de risco: NO_INFORMATION
+    # orderId: x9876b6d-a431-4822-8422-9cb52741z333
+    # customerId: 3c5a67ba-72ee-4dd8-c3cf-1e094316ccc9
+
+rabbitmq:
+  exchange: order-service.process-secure-order-status.v1.e
+  process-order:
+    base: order-service.process-secure-order-status.v1
+    queue: order-service.process-secure-order-status.v1.q
+    dlq: order-service.process-secure-order-status.v1.dlq
+
+
+  process-payment-subscription:
+    base: order-service.process-payment-subscription.v1
+    queue: order-service.process-payment-subscription.v1.q
+    dlq: order-service.process-payment-subscription.v1.dlq

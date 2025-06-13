@@ -1,0 +1,50 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: no
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq/
+      - ./configs/rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+
+  mockserver:
+    image: mockserver/mockserver:5.15.0
+    ports:
+      - "1080:1080"
+    environment:
+      MOCKSERVER_PROPERTY_FILE: /config/mockserver.properties
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/persistedExpectations.json
+    volumes:
+      - type: bind
+        source: .
+        target: /config
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: secure_order_db
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongo_data:/data/db
+      - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - mongodb_network
+
+volumes:
+  rabbitmq:
+  mockserver:
+  mongo_data: {}
+
+networks:
+  mongodb_network:
+    driver: bridge
